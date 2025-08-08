@@ -68,13 +68,5 @@
         }
       ]
     }
-  ],
-  "functions": {
-    "build/web/**/*.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
-  "env": {
-    "FLUTTER_WEB_USE_SKIA": "true"
-  }
+  ]
 }
