@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'photo_capture_screen.dart';
 import 'personality_analysis_screen.dart';
 import 'fortune_prediction_screen.dart';
+import 'compatibility_screen.dart';
 
 void main() {
   runApp(const FaceReaderApp());
@@ -275,69 +276,32 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           ),
                           const SizedBox(width: 12),
                           Expanded(
-                            child: _buildFeatureCard(
-                              icon: Icons.auto_awesome,
-                              title: '맞춤 조언',
-                              description: '개인별 운기 상승 방법',
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const CompatibilityScreen(),
+                                  ),
+                                );
+                              },
+                              child: _buildFeatureCard(
+                                icon: Icons.favorite,
+                                title: '궁합 보기',
+                                description: '상대방과의 궁합 분석',
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
                     const SizedBox(height: 40),
-                    // 하단 버튼과 디스클레이머
+                    // 디스클레이머
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 40),
                       child: Column(
                         children: [
-                          Container(
-                            width: double.infinity,
-                            height: 56,
-                            decoration: BoxDecoration(
-                              gradient: const LinearGradient(
-                                colors: [Color(0xFF8B5CF6), Color(0xFFEC4899)],
-                              ),
-                              borderRadius: BorderRadius.circular(28),
-                            ),
-                            child: ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const PhotoCaptureScreen(),
-                                  ),
-                                );
-                              },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.transparent,
-                                shadowColor: Colors.transparent,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(28),
-                                ),
-                              ),
-                              child: const Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.diamond,
-                                    color: Colors.white,
-                                    size: 20,
-                                  ),
-                                  SizedBox(width: 8),
-                                  Text(
-                                    '관상 분석 시작하기',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 16),
                           const Text(
                             '* 이 서비스는 엔터테인먼트 목적으로 제공됩니다',
                             style: TextStyle(color: Colors.grey, fontSize: 12),
