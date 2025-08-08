@@ -1,0 +1,67 @@
+# Flutter/Dart specific
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+coverage/
+lib/generated_plugin_registrant.dart
+
+# Android
+android/
+android_embedding_debug/
+android_embedding_profile/
+android_embedding_release/
+
+# iOS
+ios/
+ios_embedding_debug/
+ios_embedding_profile/
+ios_embedding_release/
+
+# macOS
+macos/
+macos_embedding_debug/
+macos_embedding_profile/
+macos_embedding_release/
+
+# Windows
+windows/
+windows_embedding_debug/
+windows_embedding_profile/
+windows_embedding_release/
+
+# Linux
+linux/
+linux_embedding_debug/
+linux_embedding_profile/
+linux_embedding_release/
+
+# Test files
+test/
+*.test.dart
+*_test.dart
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# Temporary files
+*.log
+*.tmp
+*.temp
