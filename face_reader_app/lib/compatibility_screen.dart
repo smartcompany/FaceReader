@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'photo_capture_screen.dart';
+import 'compatibility_photo_screen.dart';
 
 class CompatibilityScreen extends StatelessWidget {
   const CompatibilityScreen({super.key});
@@ -177,7 +177,7 @@ class CompatibilityScreen extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    const PhotoCaptureScreen(),
+                                    const CompatibilityPhotoScreen(),
                               ),
                             );
                           },
