@@ -83,8 +83,10 @@ class _PhotoCaptureScreenState extends State<PhotoCaptureScreen> {
                   ],
                 ),
               ),
+              // 스크롤 가능한 메인 콘텐츠
               Expanded(
                 child: SingleChildScrollView(
+                  padding: const EdgeInsets.only(bottom: 20),
                   child: Column(
                     children: [
                       // 사진 업로드/미리보기
@@ -252,50 +254,52 @@ class _PhotoCaptureScreenState extends State<PhotoCaptureScreen> {
                           ),
                         ),
                       ],
-                      const SizedBox(height: 24),
-                    ],
-                  ),
-                ),
-              ),
-              // 촬영 팁 섹션 (하단 고정)
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(16),
-                    border: Border.all(
-                      color: Colors.white.withOpacity(0.2),
-                      width: 1,
-                    ),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.auto_awesome,
-                            color: Colors.amber,
-                            size: 20,
-                          ),
-                          const SizedBox(width: 8),
-                          const Text(
-                            '촬영 팁',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
+                      const SizedBox(height: 32),
+                      // 촬영 팁 섹션 (스크롤 가능한 영역으로 이동)
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(16),
+                            border: Border.all(
+                              color: Colors.white.withOpacity(0.2),
+                              width: 1,
                             ),
                           ),
-                        ],
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  const Icon(
+                                    Icons.auto_awesome,
+                                    color: Colors.amber,
+                                    size: 20,
+                                  ),
+                                  const SizedBox(width: 8),
+                                  const Text(
+                                    '촬영 팁',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 12),
+                              _buildTipItem('밝은 조명에서 촬영해주세요'),
+                              _buildTipItem('정면을 바라보며 자연스럽게 표정을 지어주세요'),
+                              _buildTipItem('머리카락이나 장신구로 얼굴이 가려지지 않도록 해주세요'),
+                              _buildTipItem('고화질 사진을 사용하면 더 정확한 분석이 가능합니다'),
+                              _buildTipItem('배경이 단순한 곳에서 촬영하는 것을 권장합니다'),
+                            ],
+                          ),
+                        ),
                       ),
-                      const SizedBox(height: 12),
-                      _buildTipItem('밝은 조명에서 촬영해주세요'),
-                      _buildTipItem('정면을 바라보며 자연스럽게 표정을 지어주세요'),
-                      _buildTipItem('머리카락이나 장신구로 얼굴이 가려지지 않도록 해주세요'),
                     ],
                   ),
                 ),
