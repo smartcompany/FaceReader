@@ -5,7 +5,6 @@
 .packages
 .pub-cache/
 .pub/
-build/
 coverage/
 lib/generated_plugin_registrant.dart
 
@@ -65,3 +64,6 @@ README.md
 *.log
 *.tmp
 *.temp
+
+# Build files (will be generated during build)
+build/

@@ -19,6 +19,24 @@
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="AI 기반 관상 분석 앱 - 성격 분석, 운세 예측, 궁합 보기">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="author" content="FaceReader">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-app.vercel.app/">
+  <meta property="og:title" content="FaceReader - AI 관상 분석">
+  <meta property="og:description" content="AI 기반 관상 분석 앱 - 성격 분석, 운세 예측, 궁합 보기">
+  <meta property="og:image" content="icons/Icon-512.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://your-app.vercel.app/">
+  <meta property="twitter:title" content="FaceReader - AI 관상 분석">
+  <meta property="twitter:description" content="AI 기반 관상 분석 앱 - 성격 분석, 운세 예측, 궁합 보기">
+  <meta property="twitter:image" content="icons/Icon-512.png">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -31,6 +49,10 @@
 
   <title>FaceReader - AI 관상 분석</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="flutter_bootstrap.js" as="script">
+  <link rel="preload" href="main.dart.js" as="script">
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
