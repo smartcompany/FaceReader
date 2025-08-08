@@ -4,6 +4,7 @@ import 'photo_capture_screen.dart';
 import 'personality_analysis_screen.dart';
 import 'fortune_prediction_screen.dart';
 import 'compatibility_screen.dart';
+import 'user_compatibility_screen.dart';
 
 void main() {
   runApp(const FaceReaderApp());
@@ -504,10 +505,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 const SizedBox(height: 4),
                 GestureDetector(
                   onTap: () {
+                    // 사용자 정보를 가져오기 위해 인덱스 사용
+                    final user = users[index];
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const CompatibilityScreen(),
+                        builder: (context) => UserCompatibilityScreen(
+                          userName: user['nickname']!,
+                          userAge: user['age']!,
+                          userLocation: user['location']!,
+                        ),
                       ),
                     );
                   },
