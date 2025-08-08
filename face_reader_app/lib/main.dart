@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'photo_capture_screen.dart';
+import 'personality_analysis_screen.dart';
+import 'fortune_prediction_screen.dart';
 
 void main() {
   runApp(const FaceReaderApp());
@@ -235,18 +237,40 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       child: Row(
                         children: [
                           Expanded(
-                            child: _buildFeatureCard(
-                              icon: Icons.diamond,
-                              title: '성격 분석',
-                              description: '깊이 있는 성격 특성 파악',
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const PersonalityAnalysisScreen(),
+                                  ),
+                                );
+                              },
+                              child: _buildFeatureCard(
+                                icon: Icons.diamond,
+                                title: '성격 분석',
+                                description: '깊이 있는 성격 특성 파악',
+                              ),
                             ),
                           ),
                           const SizedBox(width: 12),
                           Expanded(
-                            child: _buildFeatureCard(
-                              icon: Icons.star,
-                              title: '운세 예측',
-                              description: '미래의 기운과 운명 해석',
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const FortunePredictionScreen(),
+                                  ),
+                                );
+                              },
+                              child: _buildFeatureCard(
+                                icon: Icons.star,
+                                title: '운세 예측',
+                                description: '미래의 기운과 운명 해석',
+                              ),
                             ),
                           ),
                           const SizedBox(width: 12),
